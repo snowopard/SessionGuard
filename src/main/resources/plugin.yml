@@ -1,0 +1,20 @@
+name: SessionGuard
+version: 1.0.0
+main: com.example.sessionguard.SessionGuard
+api-version: '1.20'
+folia-supported: true
+description: Prevents session conflicts in Folia
+author: YourName
+website: https://example.com
+
+permissions:
+  sessionguard.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+
+commands:
+  sessionguard:
+    description: Main command for SessionGuard
+    aliases: [sg]
+    permission: sessionguard.reload
+    usage: /<command> [reload]
