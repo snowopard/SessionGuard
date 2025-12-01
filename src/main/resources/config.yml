@@ -1,0 +1,35 @@
+# SessionGuard Configuration
+# Prevents session conflicts when players log in from multiple locations
+
+# Reconnection delay in seconds (maximum time to allow reconnection after kick)
+reconnect-delay: 2
+
+# Kick messages (supports color codes with §)
+kick-messages:
+  duplicate-login: "You were disconnected because you logged in from another location."
+  error: "Unable to resolve session conflict. Please try again."
+  reconnecting: "Reconnecting... Please wait a moment."
+
+# Logging settings
+logging:
+  enabled: true
+  verbose: false  # Set to true for detailed connection logs
+  
+  # What to log
+  log-duplicate-detection: true
+  log-kick-events: true
+  log-reconnections: true
+
+# Advanced settings
+advanced:
+  # Maximum time (milliseconds) to wait for player status check
+  status-check-timeout: 100
+  
+  # Cleanup interval for recent kicks cache (seconds)
+  cleanup-interval: 60
+  
+  # Whether to check by username in addition to UUID
+  check-username: true
+  
+  # Debug mode (only enable for testing)
+  debug-mode: false
