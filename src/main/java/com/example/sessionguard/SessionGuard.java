@@ -41,7 +41,7 @@ public class SessionGuard extends JavaPlugin {
 
     private void cleanupExpiredData() {
         long currentTime = System.currentTimeMillis();
-        long reconnectDelay = getConfig().getLong("reconnection-delay", 2L) * 1000L;
+        /* long reconnectDelay = getConfig().getLong("reconnection-delay", 2L) * 1000L;
 
         // Clean recently kicked players after delay
         recentlyKicked.entrySet().removeIf(entry ->
@@ -64,7 +64,7 @@ public class SessionGuard extends JavaPlugin {
 
         if (getConfig().getBoolean("logging.enabled", true) && cleaned > 0) {
             getLogger().info("Cleaned " + cleaned + " inactive sessions");
-        }
+        } */
     }
 
     public CompletableFuture<Boolean> handleDuplicateLogin(UUID uuid, String username, String ipAddress) {
