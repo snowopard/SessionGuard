@@ -80,14 +80,14 @@ public class SessionGuard extends JavaPlugin {
         Long kickTime = recentlyKicked.get(uuid);
         long reconnectDelay = getConfig().getLong("reconnection-delay", 2L) * 1000L;
 
-        if (kickTime != null && System.currentTimeMillis() - kickTime < reconnectDelay) {
+        /* if (kickTime != null && System.currentTimeMillis() - kickTime < reconnectDelay) {
             // Player is reconnecting within allowed time, allow it
             if (getConfig().getBoolean("logging.enabled", true)) {
                 getLogger().info("Allowing reconnection for " + username + " (UUID: " + uuid + ") within delay period");
             }
             future.complete(true); // true means allow connection
             return future;
-        }
+        } */
 
         Player existingPlayer = Bukkit.getPlayer(uuid);
         if (existingPlayer == null && getConfig().getBoolean("check-username", true)) {
